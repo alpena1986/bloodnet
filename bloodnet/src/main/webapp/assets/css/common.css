@@ -1,0 +1,211 @@
+body{
+	-ms-overflow-style:scrollbar;
+	font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; 
+}
+.td-wrap{
+	word-wrap: break-word;
+	white-space:normal;
+}
+.overflow-ellipsis{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+table .fixed_table{
+	table-layout:fixed;
+}
+div .row-bottom-margin{
+	margin-bottom: 6px;
+}
+.border{
+	border : 1px solid grey;
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width:100%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+div.vertical-bottom {
+  	position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+div.position-relative{
+	position: relative;
+}
+div.vcenter {
+	justify-content: center;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.margin-0{
+	margin: 0 !important;
+}
+.padding-0{
+	padding: 0 !important;
+}
+div.margin-b-5{
+	margin-bottom:5px;
+}
+div.margin-b-20{
+	margin-bottom:20px;
+}
+.margin-top-5{
+	margin-top:5px;
+}
+.padding-5{
+	padding-left:5px !important;;
+	padding-right:5px !important;;
+}
+p.datetime {
+  float: right;
+  background: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 7px 5px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border-radius: 2px;
+}
+
+.step {
+   display: inline-block;
+   line-height: 1;
+   position: relative;
+   width: 10%;
+}
+
+.step i {
+  -webkit-transition: opacity .3s;
+  -moz-transition: opacity .3s;
+  -ms-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+
+
+td.vcenter{
+	vertical-align: middle !important;
+}
+
+/*.step:hover i { opacity: .3; }*/
+
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-16 { font-size: 16px; }
+.size-18 { font-size: 18px; }
+.size-21 { font-size: 21px; }
+.size-24 { font-size: 24px; }
+.size-32 { font-size: 32px; }
+.size-48 { font-size: 48px; }
+.size-64 { font-size: 64px; }
+.size-96 { font-size: 96px; }
+
+.form-inline .form-group{
+	margin-left:0px;
+	margin-right:0px;
+	padding-left:5px;
+	padding-right:5px;
+}
+.form-inline .form-group .form-control{
+	width:100%;
+}
+span[title], span[data-original-title]{
+	cursor: help;
+	/* border-bottom: 1px dotted #777; */
+}
+.card-container{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.card{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+.panel-body.search{
+	border: 2px solid #cac3c3;
+}
+
+.panel-body.result{
+	padding-bottom:10px; 
+	padding-top: 10px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border: 1px solid #ccc !important;
+}
+
+@media (max-width: 991px) {
+  .btn-responsive {
+	  padding: 10px 16px;
+	  font-size: 18px;
+	  line-height: 1.3333333;
+	  border-radius: 6px;
+  }
+}
+@media (max-width: 991px) {
+	.form-group-responsive .form-control {
+	  height: 46px;
+	  padding: 10px 16px;
+	  font-size: 18px;
+	  line-height: 1.3333333;
+	  border-radius: 6px;
+	}
+	.form-group-responsive select.form-control {
+	  height: 46px;
+	  line-height: 46px;
+	}
+	.form-group-responsive textarea.form-control,
+	.form-group-responsive select[multiple].form-control {
+	  height: auto;
+	}
+	.form-group-responsive .form-control-static {
+	  height: 46px;
+	  min-height: 38px;
+	  padding: 11px 16px;
+	  font-size: 18px;
+	  line-height: 1.3333333;
+	}
+	.form-group-responsive .form-control + .form-control-feedback {
+	  width: 46px;
+	  height: 46px;
+	  line-height: 46px;
+	}
+	.form-horizontal .form-group-responsive .control-label {
+	  padding-top: 11px;
+	  font-size: 18px;
+	}
+}
+
+/* アニメーションを速くする */
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .1s;
+       -o-transition-duration: .1s;
+          transition-duration: .1s;
+  -webkit-transition-property: height, visibility;
+       -o-transition-property: height, visibility;
+          transition-property: height, visibility;
+}
