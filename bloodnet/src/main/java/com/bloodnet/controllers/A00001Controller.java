@@ -22,6 +22,7 @@ public class A00001Controller extends BaseController {
     
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
     @RequestMapping(value="/admin", method=RequestMethod.GET)
     public String init(Model model, HttpSession httpSession,  Locale locale) throws Exception {
     	

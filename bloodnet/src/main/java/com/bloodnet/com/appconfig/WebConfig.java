@@ -13,14 +13,15 @@ import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 
 @Configuration
-@EnableWebMvc  
+//@EnableWebMvc  
 @MapperScan("com.bloodnet.mappers")
-public class WebConfig  extends WebMvcConfigurerAdapter  {
+public class WebConfig extends WebMvcConfigurerAdapter  {
 	
 	/** アプリケーションのデフォルトロケール */
 	public static final Locale APPLICATION_DEFAULT_LOCALE = Locale.JAPAN;
@@ -101,5 +102,11 @@ public class WebConfig  extends WebMvcConfigurerAdapter  {
     @Bean
     public RestTemplate restTemplate(){
         return new RestTemplate();
+    }
+    
+    @Override
+    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
+        registry.addResourceHandler("/favicon.ico").addResourceLocations("/assets/favicon.ico");
     }
 }

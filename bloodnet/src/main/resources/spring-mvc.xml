@@ -11,28 +11,6 @@
 						http://www.springframework.org/schema/aop
 						http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
-    <mvc:resources mapping="/assets/**" location="/assets/" />
-    <mvc:resources mapping="/favicon.ico" location="/assets/favicon.ico" />
-
-    <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang" />
-    </mvc:interceptors>
-
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**" />
-            <mvc:exclude-mapping path="/assets/**" />
-            <bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
-                <property name="cacheSeconds" value="0" />
-                <property name="useExpiresHeader" value="true" />
-                <property name="useCacheControlHeader" value="true" />
-                <property name="useCacheControlNoStore" value="true" />
-            </bean>
-        </mvc:interceptor>
-        <mvc:interceptor>
-            <mvc:mapping path="/**" />
-            <mvc:exclude-mapping path="/assets/**" />
-            <bean class="com.bloodnet.com.interceptor.CSRFInterceptor" />
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--     <mvc:resources mapping="/assets/**" location="/assets/" /> -->
+<!--     <mvc:resources mapping="/favicon.ico" location="/assets/favicon.ico" /> -->
 </beans>
