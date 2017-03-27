@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<th:block th:include="layout/layout::common-css"></th:block>
 	<th:block th:include="layout/layout::common-scripts"></th:block>
-	<title>登录人物</title>
+	<title>登录父亲或母亲</title>
 </head>
 
 <body>
 	<p th:text="${message}"></p>
-	<form action="/admin/register" method="post" th:object="${a00001Form}" >
+	<form action="/2/register" method="post" th:object="${a00002Form}" >
+		<p>子自然人id<input type="text" th:field="*{sonId}"/></p>
 		<p>email<input type="email" th:field="*{email}"/></p>
 		<p>姓<input type="text" th:field="*{familyName}"/></p>
 		<p>名<input type="text" th:field="*{firstName}"/></p>

@@ -149,7 +149,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.2.4.Final</version>
+			<version>5.4.0.Final</version>
 
 		</dependency>
 		<dependency>
@@ -163,7 +163,11 @@
 		    <artifactId>thymeleaf-spring4</artifactId>
 		    <version>3.0.2.RELEASE</version>
 		</dependency>
-
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+    <version>5.2.9.Final</version>
+</dependency>
 
 <!-- 		<dependency>   -->
 <!-- 		    <groupId>org.slf4j</groupId>   -->

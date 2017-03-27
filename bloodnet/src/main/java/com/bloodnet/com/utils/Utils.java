@@ -4,11 +4,14 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import org.thymeleaf.util.StringUtils;
+
+import com.bloodnet.com.consts.Consts;
 
 public class Utils{
 	
@@ -21,6 +24,10 @@ public class Utils{
     
     public static <T> List<T> safe( List<T> other ) {
         return other == null ? (List<T>)Collections.<T>emptyList() : other;
+    }
+    
+    public static <T> Set<T> safe( Set<T> other ) {
+        return other == null ? (Set<T>)Collections.<T>emptySet() : other;
     }
     
     public static Cookie createSecureCookie(String key,String value){
@@ -39,6 +46,23 @@ public class Utils{
     public static boolean isAjax(HttpServletRequest request) {
         String requestedWithHeader = request.getHeader("X-Requested-With");
         return "XMLHttpRequest".equals(requestedWithHeader);
+    }
+    
+    public static String tranlateRelation(String r){
+    	String relation = "";
+    	for(int i = 0; i< r.length(); i++){
+    		char c = r.charAt(i);
+    		if (c == Consts.RELATION_IS_FATHER) {
+    			relation += "的父亲";
+    		}
+    		if (c == Consts.RELATION_IS_MOTHER) {
+    			relation += "的母亲";
+    		}
+    		if (c == Consts.RELATION_IS_SON) {
+    			relation += "的儿子";
+    		}
+    	}
+    	return relation;
     }
     
 }
