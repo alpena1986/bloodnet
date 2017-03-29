@@ -13,7 +13,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 
 import com.bloodnet.com.annotation.WebAdminLogger;
-import com.bloodnet.com.model.LoggedInUser;
+import com.bloodnet.com.model.SystemUser;
 import com.bloodnet.com.utils.BigDecimalUtils;
 
 
@@ -23,7 +23,7 @@ public class BaseController{
 	 * ログイン中のユーザオブジェクト
 	 */
 	@Autowired
-	protected LoggedInUser loggedInUser;
+	protected SystemUser loggedInUser;
 	
 
 	
@@ -44,11 +44,11 @@ public class BaseController{
     
     protected DateTimeFormatter datepickerFormat = DateTimeFormat.forPattern("yyyy/MM/dd");
 
-	public LoggedInUser getLoggedInUser() {
+	public SystemUser getLoggedInUser() {
 		return loggedInUser;
 	}
 
-	public void setLoggedInUser(LoggedInUser loggedInUser) {
+	public void setLoggedInUser(SystemUser loggedInUser) {
 		this.loggedInUser = loggedInUser;
 	}
 
