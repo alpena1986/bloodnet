@@ -49,6 +49,7 @@ public class CommonService{
     	tblSeqMapper.updateByExample(seqList.get(0), example);
     	return ret;
     }
+    
     public String findWife(String id){
     	TblFatherSonExample fatherSonExample = new TblFatherSonExample();
     	TblFatherSonExample.Criteria criteria = fatherSonExample.createCriteria();
