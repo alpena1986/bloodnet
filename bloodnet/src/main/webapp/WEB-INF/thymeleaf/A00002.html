@@ -6,19 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<th:block th:include="layout/layout::common-css"></th:block>
 	<th:block th:include="layout/layout::common-scripts"></th:block>
-	<title>登录父亲或母亲</title>
+	<title>欢迎加入家谱网</title>
 </head>
 
 <body>
-	<p th:text="${message}"></p>
-	<form action="/2/register" method="post" th:object="${a00002Form}" >
-		<p>子自然人id<input type="text" th:field="*{sonId}"/></p>
-		<p>email<input type="email" th:field="*{email}"/></p>
-		<p>姓<input type="text" th:field="*{familyName}"/></p>
-		<p>名<input type="text" th:field="*{firstName}"/></p>
-		<p>性别<input type="radio" value="1" th:field="*{sex}"/>男 <input type="radio" value="2" th:field="*{sex}"/>女</p>
-		<p>生日YYYYMMDD·<input type="text" th:field="*{birthdate}"/></p>
-		<button type="submit">登录</button>
-	</form>
+	<div class="container">
+		<p th:text="${message}"></p>
+		<form action="/2/register" method="post" th:object="${a00002Form}" >
+		  <div>	
+			<nav style="text-align: center;margin: 40px 0 0;">
+			  <a style="text-decoration: none;color: #03678b;cursor: pointer;" href="http://localhost:8080/1">
+				 <img class="img-thumbnail" alt="家谱网" src="../../assets/images/logo.png">
+			  </a>
+			  <p class="help-block">欢迎注册家谱网</p>
+			</nav>
+		  </div>
+  	      <div style="max-width: 430px;width: 100%;margin-right: auto;margin-left: auto;">
+			  <div style="padding: 20px 20px 20px 0;word-wrap: break-word;">
+			  <div class="jumbotron" style="clear: both;width: 100%;min-height: 1px;padding-left: 20px;float: left;">
+			      <!-- 注册input -->
+			   	  <div class="form-group" style="text-align:center;">
+				    <h3>创建新帐号 加入家谱网</h3>
+				  </div>
+				  <!-- 邮箱input -->
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-2 control-label" style="width: 150px;">创建账号</label>
+				    <div class="col-sm-10">
+				      <input type="email" style="width: 300px;" class="form-control" id="inputEmail3" placeholder="邮箱/Email">
+				    </div>
+				  </div>
+				  <!-- 密码input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 150px;">输入密码 </label>
+				    <div class="col-sm-10">
+				      <input type="password" style="width: 300px;" class="form-control" id="inputPassword3" placeholder="密码应由6-20个字符组成">
+				    </div>
+				  </div>
+				  <!-- 确认密码input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 150px;">确认密码 </label>
+				    <div class="col-sm-10">
+				      <input type="password" style="width: 300px;" class="form-control" id="inputPassword4" placeholder="密码应由6-20个字符组成">
+				    </div>
+				  </div>
+				  <!-- 邮箱验证码input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 150px;">验 证 码 </label>
+				    <div class="col-sm-10">
+				      <input type="password" style="width: 150px;" class="form-control" id="inputPassword3" placeholder="邮箱验证码">
+				      <button type="submit">发送验证码</button>
+				    </div>
+				  </div>
+				  <!-- 会员规则checkbox -->
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <div class="checkbox">
+				        <label>
+				          <input type="checkbox">我已阅读并同意遵守<a href="http://renren.com/info/agreement.jsp">家谱网服务条款</a>
+				        </label>
+				      </div>
+				    </div>
+				  </div>
+				  <!-- 注册按钮 bottun-->
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" style="width: 100%;" class="btn btn-success btn-lg">立即注册</button>
+				    </div>
+				  </div>
+			  </div>
+			  </div>
+	      </div>
+		</form>
+	</div>
+	<th:block th:include="layout/layout::common-footer"></th:block>
 </body>
 </html>

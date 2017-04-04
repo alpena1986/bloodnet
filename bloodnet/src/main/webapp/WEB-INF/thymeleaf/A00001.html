@@ -10,6 +10,7 @@
 </head> 
 
 <body>
+<div class="container">
 	<p th:text="${message}"></p>
 	<form action="/1/register" method="post" th:object="${a00001Form}"  class="form-horizontal">
 	  <div>	
@@ -20,23 +21,23 @@
 		  <p class="help-block">请以安全方式登录您的账户。</p>
 		</nav>
 	  </div>
-	  <div style="max-width: 410px;width: 100%;margin-right: auto;margin-left: auto;">
+	  <div style="max-width: 430px;width: 100%;margin-right: auto;margin-left: auto;">
 		  <div style="padding: 20px 20px 20px 0;word-wrap: break-word;">
-		  <div style="clear: both;width: 100%;min-height: 1px;padding-left: 20px;float: left;">
+		  <div class="jumbotron" style="clear: both;width: 100%;min-height: 1px;padding-left: 20px;float: left;">
 		   	  <div class="form-group" style="text-align:center;">
 			    <h3>欢迎登陆使用家谱网</h3>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
 			    <div class="col-sm-10">
-			      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="邮箱">
 			      <a href="注册账号" target="_blank" style="color:blue; line-height:1.5;">注册账号</a>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
 			    <div class="col-sm-10">
-			      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+			      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
 			      <a href="忘记密码" target="_blank" style="color:blue; line-height:1.5;">忘记密码？</a>
 			    </div>
 			  </div>
@@ -51,12 +52,14 @@
 			  </div>
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn btn-success">登录</button>
+			      <button type="submit" class="btn btn-success btn-lg">登录</button>
 			    </div>
 			  </div>
 			  </div>
 		  </div>
 	  </div>
 	</form>
+	</div>
+	<th:block th:include="layout/layout::common-footer"></th:block>
 </body>
 </html>
