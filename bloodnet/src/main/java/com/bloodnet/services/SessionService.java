@@ -36,9 +36,8 @@ public class SessionService extends BaseService {
 		Session session = new Session();
 		session.setUserId(userId);
 		session.setPassword(password);
-		HttpEntity<Session> formEntity = new HttpEntity<Session>(session, HttpUtils.getCommonHttpHeaders());
 		 
-		String sessionId = restTemplate.postForObject("http://localhost:8080/api/sessions", formEntity, String.class);
+		String sessionId = restTemplate.postForObject("http://localhost:8080/api/sessions", session, String.class);
 		return sessionId;
 	}
 }
