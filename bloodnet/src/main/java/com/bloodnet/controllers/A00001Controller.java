@@ -32,9 +32,9 @@ public class A00001Controller extends BaseController {
     @RequestMapping(value="/1", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00001Form form , HttpSession httpSession) throws Exception {
     	
-    	jdbcTemplate.execute("select 1");
-    	Profile p  = restTemplate.getForObject("http://localhost:8080/bloodnetapi/1", Profile.class);
-    	p.getId();
+    	//jdbcTemplate.execute("select 1");
+    	//Profile p  = restTemplate.getForObject("http://localhost:8080/bloodnetapi/1", Profile.class);
+    	//p.getId();
         return "A00001";
     }
     

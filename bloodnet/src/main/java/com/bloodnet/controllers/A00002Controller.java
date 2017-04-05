@@ -37,21 +37,21 @@ public class A00002Controller extends BaseController {
     @RequestMapping(value="/2", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00002Form form , HttpSession httpSession) throws Exception {
     	
-    	jdbcTemplate.execute("select 1");
+    	//jdbcTemplate.execute("select 1");
         return "A00002";
     }
     
     @RequestMapping(value="/2/register", method=RequestMethod.POST)
     public String register(Model model,@ModelAttribute A00002Form form ,HttpSession httpSession) throws Exception {
     	
-    	String parentId = a00001Service.createHuman(form.getEmail(), form.getFamilyName(), form.getFirstName(), form.getSex(), form.getBirthdate());
+    	/*String parentId = a00001Service.createHuman(form.getEmail(), form.getFamilyName(), form.getFirstName(), form.getSex(), form.getBirthdate());
     	if (Consts.SEX_MALE.equals(form.getSex())) {
     		a00002Service.createFatherSon(form.getSonId(), parentId);
     	}else {
     		a00004Service.createMotherSon(form.getSonId(), parentId);
     	}
     	
-    	model.addAttribute("message", "登录成功");
+    	model.addAttribute("message", "登录成功");*/
         return "A00002";
     }
 }

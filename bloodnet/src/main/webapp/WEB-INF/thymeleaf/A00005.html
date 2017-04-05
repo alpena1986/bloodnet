@@ -4,18 +4,78 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
 	<th:block th:include="layout/layout::common-css"></th:block>
 	<th:block th:include="layout/layout::common-scripts"></th:block>
-	<title>判断关系</title>
+	<title>家谱网</title>
 </head>
 
 <body>
 	<p th:text="${message}"></p>
-	<form action="/5/register" method="post" th:object="${a00005Form}" >
-		<p>自然人Aid<input type="text" th:field="*{aId}"/></p>
-		<p>自然人Bid<input type="text" th:field="*{bId}"/></p>·
-		
-		<button type="submit">登录</button>
-	</form>
+	    <nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#" style="border: 1px solid;color: #ffffff !important;">首页</a>
+	          <a class="navbar-brand" href="#">家族树</a>
+	          <a class="navbar-brand" href="#">检索</a>
+	          <a class="navbar-brand" href="#">帮助</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <form class="navbar-form navbar-right">
+	            <div class="form-group">
+	              <input type="text" placeholder="邮箱" class="form-control">
+	            </div>
+	            <div class="form-group">
+	              <input type="password" placeholder="密码" class="form-control">
+	            </div>
+	            <button type="submit" class="btn btn-success">登录</button>
+	            <button type="button" class="btn btn-link">注册</button>
+	          </form>
+	        </div><!--/.navbar-collapse -->
+	      </div>
+	    </nav>
+	
+	    <!-- Main jumbotron for a primary marketing message or call to action -->
+	    <div class="jumbotron">
+	      <div class="container">
+	        <h1>欢迎光临家谱网</h1>
+	        <p>家族关系管理系统，将现在的自身家族信息进行线上的整理融合，拉近你我他的关系，判断亲戚关系，将所有血缘关系进行线上管理的目的。</p>
+	        <p><a class="btn btn-primary btn-lg" href="#" role="button">了解更多 &raquo;</a></p>
+	      </div>
+	    </div>
+	
+	    <div class="container">
+	      <!-- Example row of columns -->
+	      <div class="row">
+	        <div class="col-md-4">
+	          <h2>个性家谱</h2>
+	          <p>李姓在中国的重庆、四川、云南、青海是第一大姓，河南是中国李姓的第一大省，2010年，据国家统计数据普查显示人口为9200余万；历代名人有思想家李耳、诗仙李白等。</p>
+	          <p><a class="btn btn-default" href="#" role="button">详细  &raquo;</a></p>
+	        </div>
+	        <div class="col-md-4">
+	          <h2>历史名人家谱</h2>
+	          <p>李氏家谱，是李氏的家谱，内容包括李氏源流、世系表、家训、家传、著述、家谱图像、字辈等。李氏，中华姓氏之一，主要源自嬴姓及他姓改姓；其始祖皋陶为五帝之一的颛顼高阳氏直系后裔，颛顼为黄帝次子昌意之子，与廉、徐、江、秦、梁、李、赵、黄、马、葛、谷、缪、钟、费等姓氏的汉族人，合称为嬴姓十四氏。</p>
+	          <p><a class="btn btn-default" href="#" role="button">详细  &raquo;</a></p>
+	       </div>
+	        <div class="col-md-4">
+	          <h2>公开家谱</h2>
+	          <p>李姓人口众多，在中国有李姓人口约9200多万。加上旅居海外的李姓，就有1.07亿人。李姓在中国历史上建立的政权最多，称帝称王者达60多人，先后建立有大成、西凉、凉、吴、魏、唐、楚、后唐、南唐、大蜀、西夏和大顺等政权。所以李姓声威显赫。历史教授钱文忠指出，李姓在历史上建立的政权最多，称帝、称王的李姓人有60多个。</p>
+	          <p><a class="btn btn-default" href="#" role="button">详细  &raquo;</a></p>
+	        </div>
+	      </div>
+	      <hr>
+	
+	    <footer>
+	        <p class="pull-right"><a href="#">返回顶端</a></p>
+	        <p>© 2016 家谱网科技股份有限公司 · <a href="#">联系我们</a> · <a href="#">隐私</a></p>
+        </footer>
+	    </div> <!-- /container -->
 </body>
 </html>

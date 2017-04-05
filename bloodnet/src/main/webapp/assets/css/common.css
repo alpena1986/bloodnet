@@ -1,6 +1,6 @@
 body{
 	-ms-overflow-style:scrollbar;
-	font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; 
+	font-family: "Arial","Microsoft YaHei","é»‘ä½“","å®‹ä½“",sans-serif;
 }
 .td-wrap{
 	word-wrap: break-word;
@@ -194,7 +194,7 @@ span[title], span[data-original-title]{
 	}
 }
 
-/* ƒAƒjƒ[ƒVƒ‡ƒ“‚ğ‘¬‚­‚·‚é */
+/* ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ğ‘¬‚ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .collapsing {
   position: relative;
   height: 0;
