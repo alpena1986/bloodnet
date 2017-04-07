@@ -2,6 +2,7 @@ package com.bloodnet.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -34,16 +35,25 @@ public class A00001Controller extends BaseController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private SessionService sessionService;
+	
     @RequestMapping(value="/1", method=RequestMethod.GET)
-    public String init(Model model, @ModelAttribute A00001Form form , HttpSession httpSession) throws Exception {
-    	userService.createUser("234567", "234567", "234567", "234567");
+    public String init(Model model, @ModelAttribute A00001Form form) throws Exception {
         return "A00001";
     }
     
     @RequestMapping(value="/1/register", method=RequestMethod.POST)
-    public String register(Model model,@ModelAttribute A00001Form form ,HttpSession httpSession) throws Exception {
-    	a00001Service.createHuman(form.getEmail(), form.getFamilyName(), form.getFirstName(), form.getSex(), form.getBirthdate());
-    	model.addAttribute("message", "登录成功");
+    public String register(Model model,@ModelAttribute A00001Form form) throws Exception {
+    	String acid = sessionService.getSessionId(form.getUserId(), form.getPassword());
+    	if (StringUtils.isNotBlank(acid)) {
+    		loggedInUser.setAcid(acid);
+    		loggedInUser.setEmail(form.getUserId());
+    		model.addAttribute("message", "登录成功");
+    	} else {
+    		model.addAttribute("message", "登录失败");
+    	}
+    	
         return "A00001";
     }
 }
