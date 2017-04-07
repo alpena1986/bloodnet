@@ -16,6 +16,7 @@ import com.bloodnet.form.A00001Form;
 import com.bloodnet.lib.Profile;
 import com.bloodnet.services.A00001Service;
 import com.bloodnet.services.SessionService;
+import com.bloodnet.services.UserService;
 
 
 @Controller
@@ -31,11 +32,11 @@ public class A00001Controller extends BaseController {
 	private A00001Service a00001Service;
 	
 	@Autowired
-	private SessionService sessionService;
+	private UserService userService;
 	
     @RequestMapping(value="/1", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00001Form form , HttpSession httpSession) throws Exception {
-    	String p = sessionService.getSessionId("12345", "12345");
+    	userService.createUser("234567", "234567", "234567", "234567");
         return "A00001";
     }
     

@@ -39,9 +39,17 @@
                selectByExampleQueryId="false">
             <!--<columnRenamingRule searchString="^D_" replaceString=""/>-->
         </table>
-		<table tableName="tbl_human" domainObjectName="TblHuman" ></table>
-		<table tableName="tbl_seq" domainObjectName="TblSeq" ></table>
-		<table tableName="tbl_father_son" domainObjectName="TblFatherSon" ></table>
-		<table tableName="tbl_mother_son" domainObjectName="TblMotherSon" ></table>
+		<table tableName="tbl_relation_father_daughter" domainObjectName="TblRelationFatherDaughter" ></table>
+		<table tableName="tbl_relation_father_son" domainObjectName="TblRelationFatherSon" ></table>
+		<table tableName="tbl_relation_mother_daughter" domainObjectName="TblRelationMotherDaughter" ></table>
+		<table tableName="tbl_relation_mother_son" domainObjectName="TblRelationMotherSon" ></table>
+		<table tableName="tbl_relation_spouse" domainObjectName="TblRelationSpouse" ></table>
+		<table tableName="tbl_relation_stepfather_daughter" domainObjectName="TblRelationStepfatherDaughter" ></table>
+		<table tableName="tbl_relation_stepfather_son" domainObjectName="TblRelationStepfatherSon" ></table>
+		<table tableName="tbl_relation_stepmother_daughter" domainObjectName="TblRelationStepmotherDaughter" ></table>
+		<table tableName="tbl_relation_stepmother_son" domainObjectName="TblRelationStepmotherSon" ></table>
+		<table tableName="tbl_profile" domainObjectName="TblProfile" ></table>
+		<table tableName="tbl_user" domainObjectName="TblUser" ></table>
+		<table tableName="tbl_acid" domainObjectName="TblAcid" ></table>
     </context>
 </generatorConfiguration>

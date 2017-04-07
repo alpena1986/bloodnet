@@ -5,6 +5,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
 import com.bloodnet.com.utils.BigDecimalUtils;
+import com.bloodnet.com.utils.HttpUtils;
 
 
 
@@ -16,4 +17,7 @@ public class BaseService{
     
     @Autowired
     protected MessageSource messageSource;
+    
+    @Autowired
+    protected HttpUtils httpUtils;
 }
