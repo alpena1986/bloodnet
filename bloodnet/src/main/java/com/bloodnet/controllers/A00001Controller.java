@@ -3,6 +3,10 @@ package com.bloodnet.controllers;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -45,15 +49,16 @@ public class A00001Controller extends BaseController {
     
     @RequestMapping(value="/1/register", method=RequestMethod.POST)
     public String register(Model model,@ModelAttribute A00001Form form) throws Exception {
-    	String acid = sessionService.getSessionId(form.getUserId(), form.getPassword());
-    	if (StringUtils.isNotBlank(acid)) {
-    		loggedInUser.setAcid(acid);
+		UsernamePasswordToken token = new UsernamePasswordToken(form.getUserId(), form.getPassword());
+		final Subject subject = SecurityUtils.getSubject();
+		try {
+			subject.login(token);
     		loggedInUser.setEmail(form.getUserId());
     		model.addAttribute("message", "登录成功");
     		return "A00003";
-    	} 
-    	
-    	model.addAttribute("message", "登录失败");
-        return "A00001";
+		} catch (AuthenticationException ex) {
+	    	model.addAttribute("message", "登录失败");
+	        return "A00001";
+		}
     }
 }
