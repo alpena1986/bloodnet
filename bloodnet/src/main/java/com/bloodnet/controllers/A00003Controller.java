@@ -14,6 +14,7 @@ import com.bloodnet.controllers.com.BaseController;
 import com.bloodnet.form.A00003Form;
 import com.bloodnet.services.A00001Service;
 import com.bloodnet.services.A00002Service;
+import com.bloodnet.services.ProfileService;
 
 
 @Controller
@@ -23,6 +24,9 @@ public class A00003Controller extends BaseController {
 	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
+	private ProfileService profileService;
+	
+	@Autowired
 	private A00001Service a00001Service;
 	
 	@Autowired
@@ -30,7 +34,8 @@ public class A00003Controller extends BaseController {
 	
     @RequestMapping(value="/3", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00003Form form , HttpSession httpSession) throws Exception {
-    	
+
+    	profileService.createProfile("李", "某某", "01", "20160401", "230826198777771111");
         return "A00003";
     }
     
