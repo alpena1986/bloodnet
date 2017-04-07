@@ -50,10 +50,10 @@ public class A00001Controller extends BaseController {
     		loggedInUser.setAcid(acid);
     		loggedInUser.setEmail(form.getUserId());
     		model.addAttribute("message", "登录成功");
-    	} else {
-    		model.addAttribute("message", "登录失败");
-    	}
+    		return "A00003";
+    	} 
     	
+    	model.addAttribute("message", "登录失败");
         return "A00001";
     }
 }
