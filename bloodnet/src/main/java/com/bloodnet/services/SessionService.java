@@ -2,8 +2,6 @@ package com.bloodnet.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,6 +13,8 @@ import com.bloodnet.services.com.CommonService;
 @Service
 public class SessionService extends BaseService {
 
+	public static final String PATH = "/sessions";
+	
 	@Autowired
 	private TblHumanMapper tblHumanMapper;
 	
@@ -39,7 +39,10 @@ public class SessionService extends BaseService {
 		session.setPassword(password);
 		HttpEntity<Session> formEntity = new HttpEntity<Session>(session, httpUtils.getCommonHttpHeaders());
 		
-		String sessionId = restTemplate.postForObject("http://localhost:8080/api/sessions", formEntity, String.class);
+		String sessionId = restTemplate.postForObject(
+				apiUriBuilder.path(PATH).build().toString(), 
+				formEntity, 
+				String.class);
 		return sessionId;
 	}
 }

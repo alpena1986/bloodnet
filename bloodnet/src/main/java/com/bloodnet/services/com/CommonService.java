@@ -5,9 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.bloodnet.com.consts.Consts;
 import com.bloodnet.com.utils.Utils;
@@ -22,8 +25,9 @@ import com.bloodnet.model.TblSeq;
 import com.bloodnet.model.TblSeqExample;
 
 @Service
-public class CommonService{
+public class CommonService extends BaseService{
 
+    
     @Autowired
     protected MessageSource messageSource;
     

@@ -3,23 +3,26 @@ package com.bloodnet.com.appconfig;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import org.springframework.web.util.UriComponentsBuilder;
 
 
 @Configuration
-//@EnableWebMvc  
 @MapperScan("com.bloodnet.mappers")
 public class WebConfig extends WebMvcConfigurerAdapter  {
 	
@@ -101,12 +104,21 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
     
     @Bean
     public RestTemplate restTemplate(){
-        return new RestTemplate();
+    	HttpClient httpClient = HttpClientBuilder.create().build();  
+    	ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);  
+    	RestTemplate restTemplate = new RestTemplate(requestFactory); 
+    	return restTemplate;
     }
     
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
     //    registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
      //   registry.addResourceHandler("/favicon.ico").addResourceLocations("/assets/favicon.ico");
+    }
+    
+    @Bean(name = "apiUriBuilder")
+    public UriComponentsBuilder uriComponentsBuilder(){
+    	UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://127.0.0.1:8080/api");
+    	return builder;
     }
 }

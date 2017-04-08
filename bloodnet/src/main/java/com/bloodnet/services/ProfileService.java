@@ -11,6 +11,8 @@ import com.bloodnet.services.com.BaseService;
 @Service
 public class ProfileService extends BaseService {
 	
+	public static final String PATH = "/profiles";
+	
 	@Autowired
 	private RestTemplate restTemplate;
 	
@@ -37,6 +39,9 @@ public class ProfileService extends BaseService {
 		
 		HttpEntity<Profile> formEntity = new HttpEntity<Profile>(profile, httpUtils.getCommonHttpHeaders());
 		
-		restTemplate.postForEntity("http://localhost:8080/api/profiles", formEntity, Error.class);
+		restTemplate.postForEntity(
+				apiUriBuilder.path(PATH).build().toString(), 
+				formEntity, 
+				Error.class);
 	}
 }

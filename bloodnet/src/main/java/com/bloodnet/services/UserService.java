@@ -11,6 +11,8 @@ import com.bloodnet.services.com.BaseService;
 @Service
 public class UserService extends BaseService {
 	
+	public static final String PATH = "/users";
+	
 	@Autowired
 	private RestTemplate restTemplate;
 	
@@ -34,6 +36,9 @@ public class UserService extends BaseService {
 		user.setSecondaryEmail(secondaryEmail);
 		HttpEntity<User> formEntity = new HttpEntity<User>(user, httpUtils.getCommonHttpHeaders());
 		
-		restTemplate.postForEntity("http://localhost:8080/api/users", formEntity, Error.class);
+		restTemplate.postForEntity(
+				apiUriBuilder.path(PATH).build().toString(), 
+				formEntity, 
+				Error.class);
 	}
 }
