@@ -99,7 +99,6 @@ public class DBConfig  extends WebMvcConfigurationSupport  implements Transactio
         definitionsMap.put("/**", "webAccessFilter");
         definitionsMap.put("/1/**", "anon");
         definitionsMap.put("/2/**", "anon");
-        definitionsMap.put("/5/**", "anon");
 		bean.setFilterChainDefinitionMap(definitionsMap);
 		return bean;
 	}

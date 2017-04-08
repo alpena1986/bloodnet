@@ -2,10 +2,6 @@ package com.bloodnet.controllers;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -46,14 +42,6 @@ public class A00005Controller extends BaseController {
     @RequestMapping(value="/5", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00005Form form , HttpSession httpSession) throws Exception {
     	
-		UsernamePasswordToken token = new UsernamePasswordToken("123@123.com", "123");
-		final Subject subject = SecurityUtils.getSubject();
-		try {
-			subject.login(token);
-		} catch (AuthenticationException ex) {
-			return "A00005";
-		}
-		
         return "A00005";
     }
     

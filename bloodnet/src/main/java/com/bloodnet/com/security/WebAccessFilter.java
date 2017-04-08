@@ -3,15 +3,12 @@ package com.bloodnet.com.security;
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.StringUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
-import org.apache.shiro.web.servlet.ShiroHttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.shiro.web.util.WebUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +24,9 @@ public class WebAccessFilter extends AccessControlFilter {
 	@Resource(name = "loggedInUser")
 	public SystemUser loggedInUser;
 	
+    private final static String unauthorizedUrl = "/5";  
+    private final static String loginUrl = "/1";  
+    
 	public WebAccessFilter() {
 		super();
 	}
@@ -47,7 +47,7 @@ public class WebAccessFilter extends AccessControlFilter {
 	@Override
 	protected boolean isAccessAllowed(final ServletRequest req, final ServletResponse rsp, final Object obj) throws Exception {
 
-		if(StringUtils.isNotBlank(loggedInUser.getAcid())) {
+		if(StringUtils.hasLength(loggedInUser.getAcid())) {
 			return true;
 		}
 		return false;
@@ -65,11 +65,18 @@ public class WebAccessFilter extends AccessControlFilter {
 	 * @return boolean false:アクセス許拒否
 	 */
 	@Override
-	protected boolean onAccessDenied(final ServletRequest req,
-			final ServletResponse rsp) throws Exception {
-		// Apache-shiroを介した別の認証フィルターで失敗した場合に、飛ばされます。
-		// 1個しか指定していないので、今回はここには飛んできませんので、実装しません。
-		return false;
+	protected boolean onAccessDenied(final ServletRequest request, final ServletResponse response) throws Exception {
+        Subject subject = getSubject(request, response);  
+        if (subject.getPrincipal() == null) {//表示没有登录，重定向到登录页面  
+            saveRequest(request);  
+            WebUtils.issueRedirect(request, response, loginUrl);  
+        } else {  
+            if (StringUtils.hasText(unauthorizedUrl)) {//如果有未授权页面跳转过去  
+                WebUtils.issueRedirect(request, response, unauthorizedUrl);  
+            } else {//否则返回401未授权状态码  
+                WebUtils.toHttp(response).sendError(HttpServletResponse.SC_UNAUTHORIZED);  
+            }  
+        }  
+        return false; 
 	}
-
 }
