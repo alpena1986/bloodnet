@@ -1,6 +1,7 @@
 package com.bloodnet.form;
 
 public class A00003Form {
+	static final long serialVersionUID = 1L;
 	private String fatherId;
 	private String familyName;
 	private String firstName;

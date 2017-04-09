@@ -4,10 +4,10 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="bloodnetlib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bloodnetlib/bloodnetlib">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/WEB-INF"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/WEB-INF/resources"/>
         <property name="java-output-path" value="/bloodnet/target/classes"/>
         <property name="context-root" value="bloodnet"/>
+        <property name="component.exclusion.patterns" value="%regex[WEB-INF/lib/*.*]"/>
     </wb-module>
 </project-modules>

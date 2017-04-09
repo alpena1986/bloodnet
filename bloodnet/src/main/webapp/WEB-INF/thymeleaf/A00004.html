@@ -6,19 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<th:block th:include="layout/layout::common-css"></th:block>
 	<th:block th:include="layout/layout::common-scripts"></th:block>
-	<title>登录儿女</title>
+	<title>欢迎加入家谱网</title>
 </head>
 
 <body>
-	<p th:text="${message}"></p>
-	<form action="/4/register" method="post" th:object="${a00004Form}" >
-		<p>母自然人id<input type="text" th:field="*{motherId}"/></p>
-		<p>email<input type="email" th:field="*{email}"/></p>
-		<p>姓<input type="text" th:field="*{familyName}"/></p>
-		<p>名<input type="text" th:field="*{firstName}"/></p>
-		<p>性别<input type="radio" value="1" th:field="*{sex}"/>男 <input type="radio" value="2" th:field="*{sex}"/>女</p>
-		<p>生日YYYYMMDD·<input type="text" th:field="*{birthdate}"/></p>
-		<button type="submit">登录</button>
-	</form>
+	<div class="container">
+		<p th:text="${message}"></p>
+		<form action="/4/register" method="post" th:object="${a00004Form}" >
+		  <div>	
+			<nav style="text-align: center;margin: 40px 0 0;">
+			  <a style="text-decoration: none;color: #03678b;cursor: pointer;" href="http://localhost:8080/1">
+				 <img class="img-thumbnail" alt="家谱网" src="../../assets/images/logo.png">
+			  </a>
+			  <p class="help-block">个人信息参照・变更</p>
+			</nav>
+		  </div>
+  	      <div style="max-width: 510px;width: 100%;margin-right: auto;margin-left: auto;">
+			  <div style="padding: 20px 20px 20px 0;word-wrap: break-word;">
+			  <div class="jumbotron" style="clear: both;width: 100%;min-height: 1px;padding-left: 20px;float: left;">
+			      <!-- 注册input -->
+			   	  <div class="form-group" style="text-align:center;">
+				    <h2>家谱网登录密码修改</h2>
+				  </div>
+				  <!-- 旧密码input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 100px;">旧密码</label>
+			        <input type="password" style="width: 300px;" class="form-control" id="inputPassword2" placeholder="登录密码">
+				  </div>
+				  <!-- 新密码input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 100px;">新密码</label>
+				    <input type="password" style="width: 300px;" class="form-control" id="inputPassword3" placeholder="密码应由6-20个字符组成">
+				  </div>
+				  <!-- 密码确认input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 100px;">密码确认</label>
+				    <input type="password" style="width: 300px;" class="form-control" id="inputPassword4" placeholder="密码应由6-20个字符组成">
+				  </div>
+				  <!-- 邮箱验证码input -->
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label" style="width: 100px;">验 证 码 </label>
+				    <input type="text" style="width: 195px;" id="inputPassword3" placeholder="邮箱验证码">
+				    <button type="submit" style="margin-left:3px" class="btn btn-default">发送验证码</button>
+				  </div>
+				  <!-- 确定按钮 bottun-->
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" style="width: 45%;" class="btn btn-success">保存</button>
+				      <button type="cancle" style="width: 45%;" class="btn btn-info">取消</button>
+				    </div>
+				  </div>
+			  </div>
+			  </div>
+	      </div>
+		</form>
+	</div>
+	<th:block th:include="layout/layout::common-footer"></th:block>
 </body>
 </html>
