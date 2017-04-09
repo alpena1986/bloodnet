@@ -25,7 +25,6 @@
             <span th:text="${e.global}? '*' : ${e.fieldName}">The field name</span>
             <span th:text="${e.message}">The error message</span>
         </li> -->
-        <li th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId Error</li>
     	</ul>
 	  <div>	
 		<nav style="text-align: center;margin: 40px 0 0;">
@@ -44,15 +43,29 @@
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
 			    <div class="col-sm-10">
-			      <input type="email" class="form-control" th:field="*{userId}" placeholder="邮箱">
-			      <a href="注册账号" target="_blank" style="color:blue; line-height:1.5;">注册账号</a>
+			      <table>
+			      <tr>
+				      <td><input type="email" class="form-control" th:field="*{userId}" placeholder="邮箱"></td>
+				      <td><a href="注册账号" target="_blank" style="color:blue; line-height:1.5;">注册账号</a></td>
+			      </tr>
+			      <tr>
+			      	<td colspan="2"><span th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" th:errorclass="fieldError">UserId Error</span></td>
+			      </tr>
+			      </table>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
 			    <div class="col-sm-10">
-			      <input type="password" class="form-control" th:field="*{password}" placeholder="请输入密码">
-			      <a href="忘记密码" target="_blank" style="color:blue; line-height:1.5;">忘记密码？</a>
+			     <table>
+			      <tr>
+			      	<td><input type="password" class="form-control" th:field="*{password}" placeholder="请输入密码"></td>
+			      	<td><a href="忘记密码" target="_blank" style="color:blue; line-height:1.5;">忘记密码？</a></td>
+			      </tr>
+			      <tr>
+			      	<td colspan="2"><span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="fieldError">Password Error</span></td>
+			      </tr>
+			      </table>
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -74,6 +87,6 @@
 	  </div>
 	</form>
 	</div>
-	<th:block th:include="layout/layout::common-footer"></th:block>
+	<!-- <th:block th:include="layout/layout::common-footer"></th:block> -->
 </body>
 </html>
