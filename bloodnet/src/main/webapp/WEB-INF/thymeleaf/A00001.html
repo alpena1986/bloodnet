@@ -11,8 +11,22 @@
 
 <body>
 <div class="container">
-	<p th:text="${message}"></p>
+	<!-- <p th:text="${message}"></p> -->
+		<!-- <th:block th:if="${#errors.fieldErrorCount > 0}">
+			<th:block th:each="error : ${#errors.fieldErrors}">
+				<th:block th:if="${not empty error.defaultMessage}">
+					<th:block th:text="${error.defaultMessage}"></th:block>
+				</th:block>
+			</th:block>
+		</th:block> -->
 	<form action="/1/register" method="post" th:object="${a00001Form}"  class="form-horizontal">
+		<ul>
+		<!-- <li th:each="e : ${#fields.detailedErrors()}">
+            <span th:text="${e.global}? '*' : ${e.fieldName}">The field name</span>
+            <span th:text="${e.message}">The error message</span>
+        </li> -->
+        <li th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId Error</li>
+    	</ul>
 	  <div>	
 		<nav style="text-align: center;margin: 40px 0 0;">
 		  <a style="text-decoration: none;color: #03678b;cursor: pointer;" href="http://localhost:8080/1">

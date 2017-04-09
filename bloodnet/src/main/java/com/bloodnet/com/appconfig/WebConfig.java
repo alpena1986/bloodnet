@@ -27,7 +27,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class WebConfig extends WebMvcConfigurerAdapter  {
 	
 	/** アプリケーションのデフォルトロケール */
-	public static final Locale APPLICATION_DEFAULT_LOCALE = Locale.JAPAN;
+	public static final Locale APPLICATION_DEFAULT_LOCALE = Locale.CHINESE;
 	
 	/** アプリケーションのデフォルトタイムゾーン */
 	public static final String APPLICATION_DEFAULT_TIMEZONE = "GMT-9:00";
@@ -60,7 +60,7 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
 	@Bean(name = "messageSource")
 	public MessageSource messageSource() {
 	    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-	    messageSource.setBasename("i18n/messages");
+	    messageSource.setBasename("properties/messages");
 	    messageSource.setDefaultEncoding("utf-8");
 	    messageSource.setCacheSeconds(5);
 	    return messageSource;

@@ -1,6 +1,10 @@
 package com.bloodnet.form;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class A00001Form {
+	
+	@NotBlank(message="{userId.null}")
 	private String userId;
 	private String password;
 	public String getUserId() {
