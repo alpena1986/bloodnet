@@ -194,7 +194,6 @@ span[title], span[data-original-title]{
 	}
 }
 
-/* �A�j���[�V�����𑬂����� */
 .collapsing {
   position: relative;
   height: 0;
@@ -208,4 +207,8 @@ span[title], span[data-original-title]{
   -webkit-transition-property: height, visibility;
        -o-transition-property: height, visibility;
           transition-property: height, visibility;
+}
+
+.fieldError {
+	color:red;
 }
