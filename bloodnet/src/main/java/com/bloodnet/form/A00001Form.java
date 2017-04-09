@@ -3,6 +3,7 @@ package com.bloodnet.form;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class A00001Form {
+	static final long serialVersionUID = 1L;
 	
 	@NotBlank(message="{userId.null}")
 	private String userId;
