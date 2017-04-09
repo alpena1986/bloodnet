@@ -35,7 +35,7 @@ public class A00003Controller extends BaseController {
     @RequestMapping(value="/3", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00003Form form , HttpSession httpSession) throws Exception {
 
-    	profileService.createProfile("李", "某某", "01", "20160401", "230826198777771111");
+    	//profileService.createProfile("李", "某某", "01", "20160401", "230826198777771111");
         return "A00003";
     }
     
