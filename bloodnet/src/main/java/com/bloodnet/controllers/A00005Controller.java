@@ -46,7 +46,7 @@ public class A00005Controller extends BaseController {
 	
     @RequestMapping(value="/5", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00005Form form , HttpSession httpSession) throws Exception {
-    	User user = userService.getUser("123");
+    	User user = userService.getUser("123@132.com");
         return "A00005";
     }
     
