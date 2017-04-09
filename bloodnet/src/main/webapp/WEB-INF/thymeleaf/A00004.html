@@ -12,13 +12,63 @@
 <body>
 	<p th:text="${message}"></p>
 	<form action="/4/register" method="post" th:object="${a00004Form}" >
-		<p>母自然人id<input type="text" th:field="*{motherId}"/></p>
-		<p>email<input type="email" th:field="*{email}"/></p>
-		<p>姓<input type="text" th:field="*{familyName}"/></p>
-		<p>名<input type="text" th:field="*{firstName}"/></p>
-		<p>性别<input type="radio" value="1" th:field="*{sex}"/>男 <input type="radio" value="2" th:field="*{sex}"/>女</p>
-		<p>生日YYYYMMDD·<input type="text" th:field="*{birthdate}"/></p>
-		<button type="submit">登录</button>
+	  <div>	
+		<nav style="text-align: center;margin: 40px 0 0;">
+		  <a style="text-decoration: none;color: #03678b;cursor: pointer;" href="http://localhost:8080/1">S
+			 <img class="img-thumbnail" alt="家谱网" src="../../assets/images/logo.png">
+		  </a>
+		  <p class="help-block">个人基本情报参照・变更</p>
+		</nav>
+	  </div>
+	  <div style="max-width: 650px;width: 100%;margin-right: auto;margin-left: auto;">
+		  <div style="padding: 20px 20px 20px 0;word-wrap: break-word;">
+		  <div class="jumbotron" style="clear: both;width: 100%;min-height: 1px;padding-left: 20px;float: left;">
+			<table class="table">
+				<tr>
+					<th colspan="3"><img class="img-thumbnail"
+						src="../../assets/images/basic.png" />个人基本情报</th>
+					<th><button type="button" class="btn btn-info">编辑</button></th>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">姓名</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+					<td><span id="helpBlock" class="help-block">姓名(英文)</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">生日</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+					<td><span id="helpBlock" class="help-block">死亡日期</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">朝代</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+					<td><span id="helpBlock" class="help-block">职业</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">身份证号码</span></td>
+					<td colspan="3"><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">电子邮箱</span></td>
+					<td colspan="3"><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">国家</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+					<td><span id="helpBlock" class="help-block">所在地区</span></td>
+					<td><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+				<tr>
+					<td><span id="helpBlock" class="help-block">详细地址</span></td>
+					<td colspan="3"><span id="helpBlock" class="help-block"></span></td>
+				</tr>
+			</table>
+          </div>
+		  </div>
+	  </div>
 	</form>
 </body>
 </html>
