@@ -5,6 +5,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.bloodnet.com.consts.Consts;
 import com.bloodnet.lib.Session;
 import com.bloodnet.mappers.TblHumanMapper;
 import com.bloodnet.services.com.BaseService;
@@ -38,11 +39,8 @@ public class SessionService extends BaseService {
 		session.setUserId(userId);
 		session.setPassword(password);
 		HttpEntity<Session> formEntity = new HttpEntity<Session>(session, httpUtils.getCommonHttpHeaders());
-		
-		String sessionId = restTemplate.postForObject(
-				apiUriBuilder.path(PATH).build().toString(), 
-				formEntity, 
-				String.class);
+		String uri = new StringBuffer().append(Consts.BASE_API_URI).append(PATH).toString();
+		String sessionId = restTemplate.postForObject(uri, formEntity, String.class);
 		return sessionId;
 	}
 }

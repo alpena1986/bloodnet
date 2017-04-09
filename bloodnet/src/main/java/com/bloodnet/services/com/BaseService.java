@@ -23,7 +23,4 @@ public class BaseService{
     
     @Autowired
     protected HttpUtils httpUtils;
-
-    @Resource(name="apiUriBuilder")
-    protected UriComponentsBuilder apiUriBuilder;
 }

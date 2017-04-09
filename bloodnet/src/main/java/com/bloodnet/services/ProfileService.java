@@ -5,6 +5,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.bloodnet.com.consts.Consts;
 import com.bloodnet.lib.Error;
 import com.bloodnet.lib.Profile;
 import com.bloodnet.services.com.BaseService;
@@ -38,10 +39,8 @@ public class ProfileService extends BaseService {
 		profile.setSex(sex);
 		
 		HttpEntity<Profile> formEntity = new HttpEntity<Profile>(profile, httpUtils.getCommonHttpHeaders());
+		String uri = new StringBuffer().append(Consts.BASE_API_URI).append(PATH).toString();
 		
-		restTemplate.postForEntity(
-				apiUriBuilder.path(PATH).build().toString(), 
-				formEntity, 
-				Error.class);
+		restTemplate.postForEntity(uri, formEntity, Error.class);
 	}
 }

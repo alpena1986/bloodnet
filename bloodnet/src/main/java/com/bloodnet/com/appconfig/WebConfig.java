@@ -116,9 +116,9 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
      //   registry.addResourceHandler("/favicon.ico").addResourceLocations("/assets/favicon.ico");
     }
     
-    @Bean(name = "apiUriBuilder")
-    public UriComponentsBuilder uriComponentsBuilder(){
-    	UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://127.0.0.1:8080/api");
-    	return builder;
+    @Bean(name = "baseApiUri")
+    public StringBuffer baseApiUri(){
+    	StringBuffer sb = new StringBuffer("http://127.0.0.1/api");
+    	return sb;
     }
 }

@@ -14,9 +14,11 @@ import com.bloodnet.com.consts.Consts;
 import com.bloodnet.com.utils.Utils;
 import com.bloodnet.controllers.com.BaseController;
 import com.bloodnet.form.A00005Form;
+import com.bloodnet.lib.User;
 import com.bloodnet.services.A00001Service;
 import com.bloodnet.services.A00004Service;
 import com.bloodnet.services.SessionService;
+import com.bloodnet.services.UserService;
 import com.bloodnet.services.com.CommonService;
 import com.bloodnet.services.com.CommonService.Human;
 
@@ -39,9 +41,12 @@ public class A00005Controller extends BaseController {
 	@Autowired
 	private SessionService sessionService;
 	
+	@Autowired
+	private UserService userService;
+	
     @RequestMapping(value="/5", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00005Form form , HttpSession httpSession) throws Exception {
-    	
+    	User user = userService.getUser("123");
         return "A00005";
     }
     
