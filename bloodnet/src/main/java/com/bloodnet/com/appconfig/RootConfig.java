@@ -18,7 +18,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 
 @EnableAspectJAutoProxy
 @ComponentScan( basePackages = {"com.bloodnet"} )
-@ImportResource("classpath:spring-mvc.xml")
 public class RootConfig{
 
 }
