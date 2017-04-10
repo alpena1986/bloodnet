@@ -10,21 +10,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.bloodnet.com.consts.Consts;
-import com.bloodnet.com.utils.Utils;
 import com.bloodnet.controllers.com.BaseController;
-import com.bloodnet.form.A00005Form;
-import com.bloodnet.lib.User;
+import com.bloodnet.form.A00006Form;
 import com.bloodnet.services.A00001Service;
 import com.bloodnet.services.A00004Service;
 import com.bloodnet.services.SessionService;
 import com.bloodnet.services.UserService;
 import com.bloodnet.services.com.CommonService;
-import com.bloodnet.services.com.CommonService.Human;
 
 
 @Controller
-public class A00005Controller extends BaseController {
+public class A00007Controller extends BaseController {
     
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -44,20 +40,10 @@ public class A00005Controller extends BaseController {
 	@Autowired
 	private UserService userService;
 	
-    @RequestMapping(value="/5", method=RequestMethod.GET)
-    public String init(Model model, @ModelAttribute A00005Form form , HttpSession httpSession) throws Exception {
-    	//User user = userService.getUser("123@132.com");
-        return "A00005";
+    @RequestMapping(value="/7", method=RequestMethod.GET)
+    public String init(Model model) throws Exception {
+    	
+        return "A00007";
     }
     
-    @RequestMapping(value="/5/register", method=RequestMethod.POST)
-    public String register(Model model,@ModelAttribute A00005Form form ,HttpSession httpSession) throws Exception {
-    	Human h = commonService.isRelative(new Human(form.getaId(), Consts.SEX_MALE, ""), new Human(form.getbId(), Consts.SEX_MALE, ""));
-    	if (h == null) {
-    		model.addAttribute("message", "不是亲戚！");
-    	} else {
-    		model.addAttribute("message", "A" + Utils.tranlateRelation(h.getRelation()) + "是B");
-    	}
-        return "A00005";
-    }
 }

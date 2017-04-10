@@ -1,0 +1,111 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta charset="utf-8"/>
+	<th:block th:include="layout/layout::common-css"></th:block>
+	<th:block th:include="layout/layout::common-scripts"></th:block>
+	<title>发现你的DNS树</title>
+</head>
+<style th:inline="text">
+    .logo{
+        background: url([[@{/assets/png/bloodnet_logo.png}]]);
+    }
+</style>
+<body style="padding-top:0px">
+	<div>
+		<nav class="navbar navbar-default" style="margin-bottom: 0px">
+		  <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand logo" style="background-size:cover;width:200px"></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	
+			  
+			  <ul class="nav navbar-nav navbar-right">
+				
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登入DNA树 <span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<div class="row">
+			<div class="col-md-12" style="background-color:#bccd8f; color:#f4f0e5;height:350px;padding:60px 0px 60px 0px">
+				<div style="margin:0 auto 20px auto;max-width:720px">
+					<h1 style="text-align:center;font-size:36px">发现你的DNA树</h1>
+					<p style="margin:0 0 12.5px; font-size:24px">简单的几步，我们为您寻找你的DNA树。如果有任何一颗DNA树中有您存在，我们将直接为您呈现该树。并赋予您扩展该树的权限。</p>
+					
+				</div>
+				<div style="margin:0 auto 20px auto;max-width:480px">
+					<div class="col-md-8">
+						<input type="text" class="form-control input-lg" placeholder="试着输入您的姓名"></input>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-lg" style="background-color:#b9881f">查查看</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12" style="background-color:#f8f7f3;padding:30px 0px 30px 0px">
+				<div class="container" style="font-size:18px;text-align:center;font-weight:normal;">
+
+					<div class="col-sm-12">
+						<div style="max-width:720px;margin:0 auto">
+							<h1 style="text-align:center">加入DNA树，构建永远传承的家族树</h1>
+
+							<p style="text-align:center">创立于2017年的DNA树，已经构建了中国最大的家谱数据库。我们遵循最高级的保密级别。</p>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<ul class="community-numbers" style="list-style:none;padding:25px 0 40px;margin:0px">
+							<li style="display:inline-block;margin:0 16px;line-height:42px"><strong>2,800,000</strong> DNA树叶</li>
+							<li style="display:inline-block;margin:0 16px;line-height:42px"><strong>800,000</strong> 注册用户</li>
+							<li style="display:inline-block;margin:0 16px;line-height:42px"><strong>45,0,000</strong> 颗独立DNA树</li>
+						</ul>
+					</div>
+					<div class="col-sm-12 padding_fix">
+						<div class="sprite community-image"></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-12" style="background:#03678b url('https://c.mfcreative.com/mars/landing/lohp/2017/us/uslohp-dnacom-bkgtexture.jpg'); color:#f4f0e5;height:350px;padding:30px 0px 30px 0px">
+				<div class="container" style="font-size:18px;text-align:center;font-weight:normal;">
+					<div class="col-sm-12">
+						<div style="max-width:720px;margin:0 auto">
+							<h1 style="text-align:center">未找到您的DNA树？</h1>
+
+							<p style="text-align:center">我们建议从您开始，为您的子孙后代打通一个认识您的时间通道。</p>
+						</div>
+						<div style="max-width:720px;text-align:center;margin:0 auto">
+							<button class="btn btn-lg" style="background-color:#a94442">开始创建</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
