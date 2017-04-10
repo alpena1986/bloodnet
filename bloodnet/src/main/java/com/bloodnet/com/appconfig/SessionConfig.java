@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import com.bloodnet.com.utils.BigDecimalUtils;
 
 @Configuration
-public class SessionConfig  extends WebMvcConfigurationSupport{
+public class SessionConfig{
    
     @Bean
     public BigDecimalUtils bigDecimalUtils(){

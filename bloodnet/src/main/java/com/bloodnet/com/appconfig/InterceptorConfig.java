@@ -11,7 +11,6 @@ import org.springframework.web.servlet.mvc.WebContentInterceptor;
 import com.bloodnet.com.interceptor.CSRFInterceptor;
 
 @Configuration
-@EnableWebMvc
 public class InterceptorConfig { 
     
     @Bean

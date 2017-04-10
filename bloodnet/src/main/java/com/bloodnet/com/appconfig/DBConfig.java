@@ -34,7 +34,7 @@ import com.bloodnet.com.security.WebAccessFilter;
 @Configuration
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:properties\\" + Consts.PROPERTY_FILE_JDBC})
-public class DBConfig  extends WebMvcConfigurationSupport  implements TransactionManagementConfigurer, EnvironmentAware{
+public class DBConfig implements TransactionManagementConfigurer, EnvironmentAware{
    
 	private Environment environment;
     
