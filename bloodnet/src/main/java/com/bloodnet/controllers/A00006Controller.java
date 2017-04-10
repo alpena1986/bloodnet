@@ -10,17 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.bloodnet.com.consts.Consts;
-import com.bloodnet.com.utils.Utils;
 import com.bloodnet.controllers.com.BaseController;
 import com.bloodnet.form.A00006Form;
-import com.bloodnet.lib.User;
 import com.bloodnet.services.A00001Service;
 import com.bloodnet.services.A00004Service;
 import com.bloodnet.services.SessionService;
 import com.bloodnet.services.UserService;
 import com.bloodnet.services.com.CommonService;
-import com.bloodnet.services.com.CommonService.Human;
 
 
 @Controller
@@ -52,7 +48,7 @@ public class A00006Controller extends BaseController {
     
     @RequestMapping(value="/6/register", method=RequestMethod.POST)
     public String register(Model model,@ModelAttribute A00006Form form ,HttpSession httpSession) throws Exception {
-
+ 
         return "A00006";
     }
 }
