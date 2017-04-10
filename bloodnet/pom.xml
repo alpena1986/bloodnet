@@ -41,12 +41,6 @@
 <!-- 		   <artifactId>spring-javaconfig</artifactId> -->
 <!-- 		   <version>1.0.0.m3</version> -->
 <!-- 		</dependency> -->
-<!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring3 -->
-<dependency>
-    <groupId>org.thymeleaf</groupId>
-    <artifactId>thymeleaf-spring3</artifactId>
-    <version>3.0.5.RELEASE</version>
-</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
