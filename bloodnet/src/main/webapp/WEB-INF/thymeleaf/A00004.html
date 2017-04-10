@@ -14,7 +14,7 @@
 	<form action="/4/register" method="post" th:object="${a00004Form}" >
 	  <div>	
 		<nav style="text-align: center;margin: 40px 0 0;">
-		  <a style="text-decoration: none;color: #03678b;cursor: pointer;" href="http://localhost:8080/1">S
+		  <a style="text-decoration: none;color: #03678b;cursor: pointer;" href="http://localhost:8080/1">
 			 <img class="img-thumbnail" alt="家谱网" src="../../assets/images/logo.png">
 		  </a>
 		  <p class="help-block">个人基本情报参照・变更</p>
@@ -23,17 +23,21 @@
 	  <div style="max-width: 650px;width: 100%;margin-right: auto;margin-left: auto;">
 		  <div style="padding: 20px 20px 20px 0;word-wrap: break-word;">
 		  <div class="jumbotron" style="clear: both;width: 100%;min-height: 1px;padding-left: 20px;float: left;">
+			<div>
+				<img class="img-thumbnail" src="../../assets/images/basic.png" />个人基本情报
+				<span style="padding-right: 20px;float: right;">
+				    <button type="button" class="btn btn-info">编辑</button>
+				</span>
+			</div>
 			<table class="table">
 				<tr>
-					<th colspan="3"><img class="img-thumbnail"
-						src="../../assets/images/basic.png" />个人基本情报</th>
-					<th><button type="button" class="btn btn-info">编辑</button></th>
-				</tr>
-				<tr>
-					<td><span id="helpBlock" class="help-block">姓名</span></td>
-					<td><span id="helpBlock" class="help-block"></span></td>
-					<td><span id="helpBlock" class="help-block">姓名(英文)</span></td>
-					<td><span id="helpBlock" class="help-block"></span></td>
+					<td style="width:15%"><span id="helpBlock" class="help-block">姓名</span></td>
+					<td style="width:30%"><span id="helpBlock" class="help-block"></span></td>
+					<td style="width:15%"><span id="helpBlock" class="help-block">姓名(英文)</span></td>
+					<td style="width:30%"><span id="helpBlock" class="help-block"></span></td>
+					<td rowspan="3" style="width:10%">
+					    <img src="../../assets/images/basic.png" class="img-thumbnail">
+					</td>
 				</tr>
 				<tr>
 					<td><span id="helpBlock" class="help-block">生日</span></td>
@@ -49,21 +53,21 @@
 				</tr>
 				<tr>
 					<td><span id="helpBlock" class="help-block">身份证号码</span></td>
-					<td colspan="3"><span id="helpBlock" class="help-block"></span></td>
+					<td colspan="4"><span id="helpBlock" class="help-block"></span></td>
 				</tr>
 				<tr>
 					<td><span id="helpBlock" class="help-block">电子邮箱</span></td>
-					<td colspan="3"><span id="helpBlock" class="help-block"></span></td>
+					<td colspan="4"><span id="helpBlock" class="help-block"></span></td>
 				</tr>
 				<tr>
 					<td><span id="helpBlock" class="help-block">国家</span></td>
 					<td><span id="helpBlock" class="help-block"></span></td>
 					<td><span id="helpBlock" class="help-block">所在地区</span></td>
-					<td><span id="helpBlock" class="help-block"></span></td>
+					<td colspan="2"><span id="helpBlock" class="help-block"></span></td>
 				</tr>
 				<tr>
 					<td><span id="helpBlock" class="help-block">详细地址</span></td>
-					<td colspan="3"><span id="helpBlock" class="help-block"></span></td>
+					<td colspan="4"><span id="helpBlock" class="help-block"></span></td>
 				</tr>
 			</table>
           </div>

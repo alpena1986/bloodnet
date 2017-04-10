@@ -47,14 +47,12 @@ public class A00001Controller extends BaseController {
     @RequestMapping(value="/1", method=RequestMethod.GET)
     public String init(Model model, @ModelAttribute A00001Form form) throws Exception {
 
-		model.addAttribute("a00001Form", form);
         return "A00001";
     }
     
     @RequestMapping(value="/1/register", method=RequestMethod.POST)
-    public String register(Model model,@ModelAttribute("a00001Form") @Valid A00001Form form, BindingResult result) throws Exception {
+    public String register(Model model,@ModelAttribute @Valid A00001Form form, BindingResult result) throws Exception {
     	if(result.hasErrors()) {
-    		model.addAttribute("a00001Form", form);
     		return "A00001";
     	}
 		UsernamePasswordToken token = new UsernamePasswordToken(form.getUserId(), form.getPassword());
