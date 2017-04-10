@@ -112,8 +112,8 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
     
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-    //    registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
-     //   registry.addResourceHandler("/favicon.ico").addResourceLocations("/assets/favicon.ico");
+        registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
+        registry.addResourceHandler("/favicon.ico").addResourceLocations("/assets/favicon.ico");
     }
     
     @Bean(name = "baseApiUri")
