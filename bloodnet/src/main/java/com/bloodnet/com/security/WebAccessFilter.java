@@ -25,7 +25,7 @@ public class WebAccessFilter extends AccessControlFilter {
 	public SystemUser loggedInUser;
 	
     private final static String unauthorizedUrl = "/5";  
-    private final static String loginUrl = "/home";  
+    private final static String loginUrl = "/login";  
     
 	public WebAccessFilter() {
 		super();
