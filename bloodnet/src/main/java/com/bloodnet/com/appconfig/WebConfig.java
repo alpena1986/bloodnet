@@ -117,7 +117,7 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
     
     @Bean(name = "baseApiUri")
     public StringBuffer baseApiUri(){
-    	StringBuffer sb = new StringBuffer("http://127.0.0.1/api");
+    	StringBuffer sb = new StringBuffer("http://127.0.0.1/bloodnetapi");
     	return sb;
     }
 }
