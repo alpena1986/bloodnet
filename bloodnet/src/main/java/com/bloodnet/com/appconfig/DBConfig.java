@@ -104,7 +104,7 @@ public class DBConfig implements TransactionManagementConfigurer, EnvironmentAwa
         definitionsMap.put("/4/**", "anon");
         definitionsMap.put("/5/**", "anon");
         definitionsMap.put("/6/**", "anon");
-        definitionsMap.put("/7/**", "anon");
+        definitionsMap.put("/home/**", "anon");
         definitionsMap.put("/assets/**", "anon");
 		bean.setFilterChainDefinitionMap(definitionsMap);
 		return bean;
