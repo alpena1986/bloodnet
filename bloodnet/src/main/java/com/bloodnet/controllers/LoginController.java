@@ -43,6 +43,12 @@ public class LoginController extends BaseController {
 	@Autowired
 	private UserService userService;
 	
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String init(Model model,@ModelAttribute LoginForm form) throws Exception {
+    	
+    	return "redirect:/home";
+    }
+    
     @RequestMapping(value="/login", method=RequestMethod.GET)
     public String get(Model model,@ModelAttribute LoginForm form) throws Exception {
     	
