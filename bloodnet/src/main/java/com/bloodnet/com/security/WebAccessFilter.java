@@ -47,7 +47,7 @@ public class WebAccessFilter extends AccessControlFilter {
 	@Override
 	protected boolean isAccessAllowed(final ServletRequest req, final ServletResponse rsp, final Object obj) throws Exception {
 
-		if(StringUtils.hasLength(loggedInUser.getAcid())) {
+		if(StringUtils.hasLength(loggedInUser.getSessionId())) {
 			return true;
 		}
 		return false;

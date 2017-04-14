@@ -12,7 +12,7 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import com.bloodnet.com.consts.Consts;
-import com.bloodnet.lib.Error;
+import com.bloodnet.lib.RestResponseBody;
 import com.bloodnet.lib.User;
 import com.bloodnet.services.com.BaseService;
 @Service
@@ -28,23 +28,23 @@ public class UserService extends BaseService {
 	 * @param userId
 	 * @param password
 	 * @param profileId
-	 * @param secondaryEmail
+	 * @param email
 	 */
 	public void createUser(
 			final String userId, 
 			final String password, 
 			final String profileId, 
-			final String secondaryEmail) {
+			final String email) {
 		
 		User user = new User();
 		user.setId(userId);
 		user.setPassword(password);
 		user.setProfileId(profileId);
-		user.setSecondaryEmail(secondaryEmail);
+		user.setEmail(email);
 		HttpEntity<User> formEntity = new HttpEntity<User>(user, httpUtils.getCommonHttpHeaders());
 		String uri = new StringBuffer().append(Consts.BASE_API_URI).append(PATH).toString();
 		try{
-			restTemplate.postForEntity(uri, formEntity, Error.class);
+			restTemplate.postForEntity(uri, formEntity, RestResponseBody.class);
 		} catch (HttpStatusCodeException ex) {
 			String err = ex.getResponseBodyAsString();
 			throw ex;

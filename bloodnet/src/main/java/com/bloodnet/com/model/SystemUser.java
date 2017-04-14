@@ -11,13 +11,13 @@ import org.springframework.web.context.WebApplicationContext;
 public class SystemUser {
 
 	private String email;
-	private String acid;
+	private String sessionId;
 	
-	public String getAcid() {
-		return acid;
+	public String getSessionId() {
+		return sessionId;
 	}
-	public void setAcid(String acid) {
-		this.acid = acid;
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
 	public String getEmail() {
 		return email;

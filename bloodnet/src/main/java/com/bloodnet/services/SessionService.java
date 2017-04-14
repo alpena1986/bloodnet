@@ -40,7 +40,7 @@ public class SessionService extends BaseService {
 		session.setPassword(password);
 		HttpEntity<Session> formEntity = new HttpEntity<Session>(session, httpUtils.getCommonHttpHeaders());
 		String uri = new StringBuffer().append(Consts.BASE_API_URI).append(PATH).toString();
-		String sessionId = restTemplate.postForObject(uri, formEntity, String.class);
-		return sessionId;
+		Session result = restTemplate.postForObject(uri, formEntity, Session.class);
+		return result.getSessionId();
 	}
 }

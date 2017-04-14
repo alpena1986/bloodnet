@@ -49,7 +49,7 @@ public class ShiroRealm extends AuthorizingRealm {
 	    if (StringUtils.isBlank(acid)) {
 	    	return null;
 	    } else {
-	    	loggedInUser.setAcid(acid);
+	    	loggedInUser.setSessionId(acid);
 	    }
 	    
 	    //Sha256CredentialsMatcher credentialsMatcher = new Sha256CredentialsMatcher();

@@ -31,7 +31,7 @@ public class HttpUtils {
 	}
 
 	public final HttpHeaders getCommonHttpHeaders(){
-		headers.set("acid", currentUser.getAcid());
+		headers.set("sessionId", currentUser.getSessionId());
 		return headers;
 	}
 	
